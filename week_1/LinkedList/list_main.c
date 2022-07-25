@@ -4,32 +4,23 @@
 int	main(void)
 {
 	LinkedList	*list;
-	ListNode	node_1;
-	ListNode	node_2;
-	ListNode	node_3;
+	ListNode	node;
 	ListNode	*curr;
 	ListNode	*check;
 
 	list = createLinkedList();
-	node_1.data = 1;
-	node_2.data = 3;
-	node_3.data = 5;
-	if (addLLElement(list, 1, node_1) == FALSE)
+	printf("------------------------\n");
+	printf("   Linked List Test   \n");
+	printf("------------------------\n");
+	for (int i = 1; i <= 3; ++i)
 	{
-		deleteLinkedList(list);
-		return (0);
+		node.data = i;
+		if (addLLElement(list, i, node) == FALSE)
+		{
+			deleteLinkedList(list);
+			return (0);
+		}
 	}
-	if (addLLElement(list, 2, node_2) == FALSE)
-	{
-		deleteLinkedList(list);
-		return (0);
-	}
-	if (addLLElement(list, 3, node_3) == FALSE)
-	{
-		deleteLinkedList(list);
-		return (0);
-	}
-
 	curr = &list->headerNode;
 	for (int i = 1; i <= 3; ++i)
 	{
@@ -38,7 +29,7 @@ int	main(void)
 	}
 	printf("------------------------\n");
 	check = getLLElement(list, 2);
-	printf("%dpos : %d\n", 2, check->data);
+	printf("pos%d : %d\n", 2, check->data);
 	printf("len : %d\n", getLinkedListLength(list));
 
 	printf("------------------------\n");
@@ -53,5 +44,5 @@ int	main(void)
 	printf("len : %d\n", getLinkedListLength(list));
 	printf("------------------------\n");
 	deleteLinkedList(list);
-	printf("Linked list deleted");
+	printf("Linked list deleted\n");
 }

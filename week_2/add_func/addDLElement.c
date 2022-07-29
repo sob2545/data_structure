@@ -14,16 +14,7 @@ int	addDLElement(DoublyList *pList, int position, DoublyListNode element)
 	new = calloc(1, sizeof(DoublyListNode));
 	*new = element;
 	curr = &pList->headerNode;
-	if (position - 1 == max)
-	{
-		for (int i = 0; i < position - 1; ++i)
-			curr = curr->pRLink;
-		curr->pRLink = new;
-		curr->pRLink->pRLink = &pList->headerNode;
-		pList->headerNode.pLLink = curr;
-		curr->pRLink->pLLink = curr;
-	}
-	else if (position <= mid)
+	if (position <= mid)
 	{
 		for (int i = 0; i < position - 1; ++i)
 			curr = curr->pRLink;
@@ -36,7 +27,7 @@ int	addDLElement(DoublyList *pList, int position, DoublyListNode element)
 	}
 	else
 	{
-		for (int i = max; i > position; --i)
+		for (int i = max; i >= position; --i)
 			curr = curr->pLLink;
 		next = curr->pLLink;
 		curr->pLLink = new;

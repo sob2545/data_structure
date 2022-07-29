@@ -1,15 +1,46 @@
 #include "doublylist.h"
 #include <stdio.h>
+#include <math.h>
 
-void	displayDoublyList(DoublyList *pList)
+static void displayCoefAndDegree(int place, float coef, int degree)
 {
-	DoublyListNode	*curr;
-	int				i = 0;
+    if (degree == 0)
+    {
+        if (place == 1)
+            printf("%.1f ", coef);
+        else
+            printf("%.1f ", (float)fabs(coef));
+    }
+    else
+    {
+		if (coef == 1)
+		{
+			printf("x^%d ", degree);
+			return ;
+		}
+        if (place == 1)
+            printf("%.1fx^%d ", coef, degree);
+		else if (degree == 1)
+			printf("%.1fx ", coef);
+        else 
+			printf("%.1fx^%d ", (float)fabs(coef), degree);
+    }
+}
 
-	curr = &pList->headerNode;
-	while (curr->pRLink != &pList->headerNode)
+void displayDoublyList(DoublyList* lst)
+{
+	DoublyListNode *node;
+	int 	i;
+	
+	i = 1;
+	node = lst->headerNode.pRLink;
+	while(node && i < lst->currentElementCount + 1)
 	{
-		curr = curr->pRLink;
-		printf("node%d data : %d\n", ++i, curr->data);
+		displayCoefAndDegree(i, node->coef, node->degree);
+		i++;
+		node = node->pRLink;
+        if (i != lst->currentElementCount + 1) 
+            node->coef >= 0 ? printf("+ ") : printf("- ");
 	}
+	printf("\n");
 }

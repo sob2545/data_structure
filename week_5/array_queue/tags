@@ -1,0 +1,29 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ArrayQueue	arrayqueue.h	/^} ArrayQueue;$/;"	t	typeref:struct:ArrayQueueType
+ArrayQueueNode	arrayqueue.h	/^} ArrayQueueNode;$/;"	t	typeref:struct:ArrayQueueNodeType
+ArrayQueueNodeType	arrayqueue.h	/^typedef struct ArrayQueueNodeType$/;"	s
+ArrayQueueType	arrayqueue.h	/^typedef struct ArrayQueueType$/;"	s
+FALSE	arrayqueue.h	/^#define FALSE	/;"	d
+TRUE	arrayqueue.h	/^#define TRUE	/;"	d
+_ARRAY_QUEUE_	arrayqueue.h	/^#define _ARRAY_QUEUE_$/;"	d
+_COMMON_QUEUE_DEF_	arrayqueue.h	/^#define _COMMON_QUEUE_DEF_$/;"	d
+createArrayQueue	createArrayQueue.c	/^ArrayQueue*	createArrayQueue(int maxElementCount)$/;"	f
+currentElementCount	arrayqueue.h	/^	int currentElementCount;$/;"	m	struct:ArrayQueueType
+data	arrayqueue.h	/^	char data;$/;"	m	struct:ArrayQueueNodeType
+deleteArrayQueue	deleteArrayQueue.c	/^ void deleteArrayQueue(ArrayQueue* pQueue)$/;"	f
+dequeueAQ	dequeueAQ.c	/^ArrayQueueNode *dequeueAQ(ArrayQueue* pQueue)$/;"	f
+enqueueAQ	enqueueAQ.c	/^int	enqueueAQ(ArrayQueue* pQueue, ArrayQueueNode element)$/;"	f
+front	arrayqueue.h	/^	int front;$/;"	m	struct:ArrayQueueType
+isArrayQueueEmpty	isArrayQueueEmpty.c	/^int isArrayQueueEmpty(ArrayQueue* pQueue)$/;"	f
+isArrayQueueFull	isArrayQueueFull.c	/^int isArrayQueueFull(ArrayQueue* pQueue)$/;"	f
+main	main.c	/^int main()$/;"	f
+maxElementCount	arrayqueue.h	/^	int maxElementCount;$/;"	m	struct:ArrayQueueType
+pElement	arrayqueue.h	/^	ArrayQueueNode *pElement;	$/;"	m	struct:ArrayQueueType
+peekAQ	peekAQ.c	/^ArrayQueueNode *peekAQ(ArrayQueue* pQueue)$/;"	f
+print_arr	main.c	/^void print_arr(ArrayQueue *arr)$/;"	f
+rear	arrayqueue.h	/^	int rear;$/;"	m	struct:ArrayQueueType
